@@ -16,8 +16,8 @@ class DoctorController extends Controller
 
     public function create()
     {
-        $doctor = Personal::all();
-        return view('doctor.create', ['doctor' => $doctor]);
+        $personal = Personal::all();
+        return view('doctor.create', ['personal' => $personal]);
     }
 
     public function store(Request $request, Doctor $doctor)

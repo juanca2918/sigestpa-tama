@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 @section('title', 'Actualizar Historia Medica Cita')
 @section('content')
     <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -12,53 +12,73 @@
 
                         <div class="form-group">
 
-                            {{--Div Historia Medica Cita--}}
+                            {{--Div ID. Historia Medica Cita--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">ID.Historia Medica Cita</span>
+                                    <span class="input-group-text" id="basic-addon1">ID. Cita</span>
                                 </div>
-                                <input type="text" value="{{$paciente->idtipdoc}}" name="idhm" class="form-control" placeholder="ID.Historia Medica Cita" aria-label="ID.Historia Medica Cita"
+                                <input type="text" value="{{$histmedc}}" name="id_cita" class="form-control" placeholder="ID.Historia Medica Cita" aria-label="ID.Historia Medica Cita"
                                        aria-describedby="basic-addon1">
                             </div>
-                            {{--Fin Div Historia Medica Cita--}}
+                            {{--Fin Div ID. Historia Medica Cita--}}
 
-                            {{--Div Input Detalle Cita--}}
+                            {{--Div Input Fecha--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Detalle Cita</span>
+                                    <span class="input-group-text" id="basic-addon1">Fecha</span>
                                 </div>
-                                <input type="text" value="{{$paciente->detallecita}}" class="form-control" placeholder="Detalle Cita"
-                                       name="detalc" aria-label="ID.Detalle Cita" aria-describedby="basic-addon1">
+                                <input type="date" class="form-control" placeholder="Fecha"
+                                       name="fech" aria-describedby="basic-addon1">
                             </div>
-                            {{--Fin Div Input Detalle Cita--}}
+                            {{--Fin Div Input Fecha--}}
 
-                            {{--Div Formula--}}
+                            {{--Div Descripcion--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Formula</span>
                                 </div>
-                                <input type="text" value="{{$hismedc->formula}}" name="formula" class="form-control" placeholder="Formula" name="frmula" aria-label="ID.Historia Medica Cita" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Descripcion" name="descrip" aria-describedby="basic-addon1">
                             </div>
-                            {{--Fin Div Formula--}}
+                            {{--Fin Div Descripcion--}}
 
-                            {{--Div Input Fecha Cita--}}
+                            {{--Div Historia Medica--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Fecha Cita</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">ID. Historia Medica
+                                    </label>
                                 </div>
-                                <input type="date" value="{{$histmedc->fechacita}}" class="form-control" placeholder="Fecha Cita"
-                                       name="fechcit" aria-label="Fecha Cita" aria-describedby="basic-addon1">
+                                <select name="idhistmed" class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Selecciona Historia Medica</option>
+                                    @foreach($histmed as $item)
+                                        <option value="{{$item->idhistmed}}">{{$item->id_paciente}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            {{--Fin Div Input Fecha Cita--}}
+                            {{--Fin Div Historia Medica--}}
+
+                            {{--Div ID. Cita--}}
+                            <div class="input-group m-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">ID. Historia Medica
+                                    </label>
+                                </div>
+                                <select name="idcita" class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Selecciona Cita</option>
+                                    @foreach($cita as $item)
+                                        <option value="{{$item->idcita}}">{{$item->id_paciente}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            {{--Fin Div ID. Cita--}}
 
                         </div>
 
                         <div class="form-group row">
                             <div class="form-group col-6">
-                                <input type="submit" class="btn btn-success form-control" value="Crear Personal">
+                                <input type="submit" class="btn btn-success form-control" value="Actualizar Historia Medica Cita">
                             </div>
                             <div class="form-group col-6">
-                                <a class="btn btn-warning form-control" href="{{route('historiamedicacita.index')}}">Regresa a Personal</a>
+                                <a class="btn btn-warning form-control" href="{{route('historiamedicacita.index')}}">Regresa Lista Historia Medica Cita</a>
                             </div>
                         </div>
                     </form>

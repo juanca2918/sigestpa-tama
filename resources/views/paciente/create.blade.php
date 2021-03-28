@@ -5,7 +5,7 @@
         <div class="shadow-lg p-5 bg-white rounded w-100">
             <div class="row d-flex flex-column justify-content-center align-items-center">
                 <div class="col-md-8">
-                <h3 class="text-center">Crear Paciente</h3>
+                <h3 class="text-center">Crear Historia Medica</h3>
                     {{--Inicio Formulario--}}
                 <form action="{{ route('paciente.store') }}" method="POST">
                     @csrf
@@ -13,12 +13,12 @@
                         <div class="form-group">
 
                             {{--Div Id.Paciente--}}
-                            <div class="input-group m-3" hidden>
+                            <div class="input-group m-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">ID.Paciente</span>
                                 </div>
                                 <input type="text" name="idpac" class="form-control" placeholder="ID.Paciente" aria-label="Id.Paciente"
-                                       aria-describedby="basic-addon1">
+                                       aria-describedby="basic-addon1" readonly>
                             </div>
                             {{--Fin Div Id.Paciente--}}
 

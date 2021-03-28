@@ -19,7 +19,7 @@ class PersonalController extends Controller
     {
         $personal = TipoDocumento::all();
         $user = User::all();
-        return view('personal.create', compact('personal', 'user'));
+        return view('personal.create', ['personal'=>$personal, 'user'=>$user]);
     }
 
     public function store(Request $request, Personal $personal)
@@ -34,21 +34,21 @@ class PersonalController extends Controller
         $personal->segsocial = $request->segusocial;
         $personal->dir = $request->dire;
         $personal->save();
-        return redirect()->route('personal.show', $personal);
+        return redirect()->route('personal.show', ['personal'=>$personal]);
     }
 
-    public function show($id)
+    public function show($personal)
     {
-        $personal = Personal::find($id);
-        return view('personal.show', compact('personal'));
+        $personale = Personal::find($personal);
+        return view('personal.show', ['personal'=>$personale]);
     }
 
-    public function edit($id)
+    public function edit($personal)
     {
         $tipodoc=TipoDocumento::all();
         $user= User::all();
-        $personal = Personal::find($id);
-        return view('personal.edit', ['tipodoc'=> $tipodoc, 'user'=> $user , 'personal'=> $personal]);
+        $personale = Personal::find($personal);
+        return view('personal.edit', ['tipodoc'=> $tipodoc, 'user'=> $user , 'personal'=> $personale]);
     }
 
     public function update(Request $request, Personal $personal)
@@ -63,7 +63,7 @@ class PersonalController extends Controller
         $personal->segsocial = $request->segusocial;
         $personal->dir = $request->dire;
         $personal->save();
-        return redirect()->route('personal.show', $personal);
+        return redirect()->route('personal.show', ['personal'=>$personal]);
     }
 
     public function destroy(Personal $personal)

@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Bienvenido a Historia Medica Cita')
+@section('title', 'Bienvenido a Auxiliar')
 @section('content')
     <div class="container-fluid">
         <h3 class="text-center">Bienvenido a Auxiliar</h3>
         <div class="">
-            <a class="btn btn-primary m-2" role="button" href="{{ route('auxiliar.create') }}">Crear Personal</a>
+            <a class="btn btn-primary m-2" role="button" href="{{ route('auxiliar.create') }}">Crear Auxiliar</a>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -13,6 +13,7 @@
                         <th>ID. Auxiliar</th>
                         <th>Estado</th>
                         <th>ID. Personal</th>
+                        <th>Acciones</th>
                     </tr>
                     @foreach ($auxiliar as $item)
                         <tr>

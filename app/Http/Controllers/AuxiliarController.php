@@ -11,20 +11,19 @@ class AuxiliarController extends Controller
     public function index()
     {
         $auxiliar = Auxiliar::all();
-        return view('cita.index', ['auxiliar'=>$auxiliar]);
+        return view('auxiliar.index', ['auxiliar'=>$auxiliar]);
     }
 
     public function create()
     {
         $personal = Personal::all();
-        $auxiliar = Auxiliar::all();
-        return view('auxiliar.create', ['auxiliar' => $auxiliar, 'personal'=> $personal]);
+        return view('auxiliar.create', ['personal'=> $personal]);
     }
 
     public function store(Request $request, Auxiliar $auxiliar)
     {
-        $auxiliar -> idauxiliar = $request -> id_auxiliar;
-        $auxiliar -> estado = $request -> $request -> estdo;
+        $auxiliar -> estado = $request -> estdo;
+        $auxiliar -> id_personal = $request -> idper;
         $auxiliar->save();
         return redirect()->route('auxiliar.show', ['auxiliar'=>$auxiliar]);
     }
@@ -37,18 +36,18 @@ class AuxiliarController extends Controller
 
     public function edit($auxiliar)
     {
-        $personal = Personal::all();
         $auxiliars = Auxiliar::find($auxiliar);
+        $personal = Personal::all();
         return view('auxiliar.edit', ['auxiliar'=> $auxiliars, 'personal'=>$personal]);
     }
 
     public function update(Request $request, Auxiliar $auxiliar)
     {
-        $auxiliar = Auxiliar::find($auxiliar);
-        $auxiliar->estado = $request->estdo;
-        $auxiliar->id_personal = $request->idpersonal;
-        $auxiliar->save();
-        return redirect()->route('auxiliar.show', ['auxiliar'=>$auxiliar]);
+        $auxiliars = Auxiliar::find($auxiliar);
+        $auxiliars->estado = $request->estdo;
+        $auxiliars->id_personal = $request->idper;
+        $auxiliars->save();
+        return redirect()->route('auxiliar.show', ['auxiliar'=>$auxiliars]);
     }
 
     public function destroy(Auxliar $auxiliar)

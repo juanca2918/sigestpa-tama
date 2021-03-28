@@ -1,32 +1,40 @@
-@extends('layouts.plantilla')
-@section('title', 'Bienvenido a Historia Medica Cita')
+@extends('layouts.app')
+@section('title', 'Bienvenido a Cita')
 @section('content')
     <div class="container-fluid">
-        <h3 class="text-center">Bienvenido a Historia Medica Cita</h3>
+        <h3 class="text-center">Bienvenido a Cita</h3>
         <div class="">
-            <a class="btn btn-primary m-2" role="button" href="{{ route('historiamedicacita.create') }}">Crear Personal</a>
+            <a class="btn btn-primary m-2" role="button" href="{{ route('cita.create') }}">Crear Cita</a>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered table-striped table-hover">
                     <tr>
-                        <th>ID. Historia Medica Cita</th>
-                        <th>Detalle Cita</th>
-                        <th>Formulario</th>
-                        <th>Fecha Cita</th>
+                        <th>ID. Cita</th>
+                        <th>Fecha</th>
+                        <th>Descripcion</th>
+                        <th>ID. Paciente</th>
+                        <th>ID. Doctor</th>
+                        <th>ID. Auxiliar</th>
+                        <th>Acciones</th>
                     </tr>
-                    @foreach ($histmedica as $item)
+                    @foreach ($cita as $item)
                         <tr>
-                            <td>{{ $item->idhistmedcita }}</td>
-                            <td>{{ $item->detallecita }}</td>
-                            <td>{{ $item->formula }}</td>
-                            <td>{{ $item->fechacita }}</td>
+                            <td>{{ $item->idcita }}</td>
+                            <td>{{ $item->fecha }}</td>
+                            <td>{{ $item->descripcion }}</td>
+                            <td>{{ $item->id_paciente }}</td>
+                            <td>{{ $item->id_doctor }}</td>
+                            <td>{{ $item->id_auxiliar }}</td>
                             <td style="display:flex;">
-                                <a class="btn btn-success m-2" role="button" href="{{ route('historiamedicacita.show', $item->idhistmedcita) }}">Ver
+                                <a class="btn btn-success m-2" role="button"
+                                   href="{{ route('cita.show', $item->idcita) }}">Ver
                                 </a>
-                                <a class="btn btn-warning m-2" role="button" href="{{ route('historiamedicacita.edit', $item->idhistmedcita) }}">Editar
+                                <a class="btn btn-warning m-2" role="button"
+                                   href="{{ route('cita.edit', $item->idcita) }}">Editar
                                 </a>
-                                <a class="btn btn-danger m-2" role="button" href="{{ route('historiamedicacita.destroy', $item->idhistmedcita) }}">Eliminar
+                                <a class="btn btn-danger m-2" role="button"
+                                   href="{{ route('cita.destroy', $item->idcita) }}">Eliminar
                                 </a>
                             </td>
                         </tr>

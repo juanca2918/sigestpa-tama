@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <h3 class="text-center">Bienvenido a Paciente</h3>
         <div class="">
-            <a class="btn btn-primary m-2" role="button" href="{{ route('paciente.create') }}">Crear Personal</a>
+            <a class="btn btn-primary m-2" role="button" href="{{ route('paciente.create') }}">Ingresa Paciente</a>
         </div>
         <div class="row">
             <div class="col-md-12">

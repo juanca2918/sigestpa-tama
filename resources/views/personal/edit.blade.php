@@ -6,7 +6,7 @@
             <div class="row d-flex flex-column justify-content-center align-items-center">
                 <div class="col-md-8">
                     <h3 class="text-center">Actualizar Personal</h3>
-                    <form action="{{ route('personal.edit', $personal) }}" method="POST">
+                    <form action="{{ route('personal.update', $personal) }}" method="POST">
                         @csrf
                         @method('PUT')
 
@@ -28,7 +28,7 @@
                                     </label>
                                 </div>
                                 <select name="idtipdoc" class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Elige...</option>
+                                    <option selected>Selecciona Documento</option>
                                     @foreach($tipodoc as $item)
                                         <option value="{{$item->idtipodoc}}">{{$item->nomdoc}}</option>
                                     @endforeach
@@ -43,7 +43,7 @@
                                     </label>
                                 </div>
                                 <select name="idusuario" class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Elige...</option>
+                                    <option selected>Selecciona Usuario</option>
                                     @foreach($user as $item)
                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                     @endforeach

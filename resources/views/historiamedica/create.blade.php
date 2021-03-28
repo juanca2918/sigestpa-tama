@@ -8,7 +8,7 @@
                 <h3 class="text-center">Crea Historia Medica</h3>
                 <form action="{{ route('historiamedica.store') }}" method="POST">
                     @csrf
-                    @method('post')
+                    @method('POST')
 
                         <div class="form-group">
 
@@ -31,7 +31,7 @@
                                 <select name="idpaciente" class="custom-select" id="inputGroupSelect01">
                                     <option selected>Selecciona un Paciente</option>
                                     @foreach($paciente as $item)
-                                        <option value="{{$item->id_paciente}}">{{$item->nombre, $item->apellido}}</option>
+                                        <option value="{{$item->idpaciente}}">{{$item->nombre}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -42,7 +42,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Fecha</span>
                                 </div>
-                                <input type="date" class="form-control" placeholder="Fecha" name="feca" aria-describedby="basic-addon1">
+                                <input type="date" class="form-control" placeholder="Fecha" name="feca" aria-describedby="basic-addon1" />
                             </div>
                             {{--Fin Div Fecha--}}
 
@@ -61,7 +61,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Alergias</span>
                                 </div>
-                                <input type="date" class="form-control" placeholder="Alergias"
+                                <input type="text" class="form-control" placeholder="Alergias"
                                        name="alerg" aria-describedby="basic-addon1">
                             </div>
                             {{--Fin Div Input Alergias--}}
@@ -69,10 +69,10 @@
                             {{--Div Input Info. Quirurgica--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Ocupacion</span>
+                                    <span class="input-group-text" id="basic-addon1">Info. Quirurgica</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Ocupacion"
-                                       name="ocupac" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Info. Quirurgica"
+                                       name="infq" aria-describedby="basic-addon1">
                             </div>
                             {{--Fin Div Info. Quirurgica--}}
 
@@ -90,10 +90,10 @@
 
                     <div class="form-group row">
                         <div class="form-group col-6">
-                            <input type="submit" class="btn btn-success form-control" value="Crear Personal">
+                            <input type="submit" class="btn btn-success form-control" value="Crear Historia Medica">
                         </div>
                         <div class="form-group col-6">
-                            <a class="btn btn-warning form-control" href="{{route('historiamedicacita.index')}}">Regresa a Personal</a>
+                            <a class="btn btn-warning form-control" href="{{route('historiamedica.index')}}">Regresa a Lista Historial Medico</a>
                         </div>
                     </div>
                 </form>

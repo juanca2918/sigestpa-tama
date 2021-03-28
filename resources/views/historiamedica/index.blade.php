@@ -1,10 +1,12 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 @section('title', 'Bienvenido a Historia Medica Cita')
 @section('content')
     <div class="container-fluid">
-        <h3 class="text-center">Bienvenido a Historia Medica Cita</h3>
+        <h3 class="text-center">Bienvenido a Historia Medica</h3>
         <div class="">
-            <a class="btn btn-primary m-2" role="button" href="{{ route('historiamedicacita.create') }}">Crear Personal</a>
+            <a class="btn btn-primary m-2" role="button" href="{{ route('historiamedica.create') }}">
+                Crear Historia Medica
+            </a>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -17,6 +19,7 @@
                         <th>Alergias</th>
                         <th>Info. Quirurgica</th>
                         <th>Ocupacion</th>
+                        <th>Acciones</th
                     </tr>
                     @foreach ($histmed as $item)
                         <tr>

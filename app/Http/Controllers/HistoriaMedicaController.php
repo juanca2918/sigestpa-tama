@@ -10,8 +10,9 @@ class HistoriaMedicaController extends Controller
 {
     public function index()
     {
+        $histmed = HistoriaMedica::all();
         $paciente = Pacientes::all();
-        return view('historiamedica.index', compact('paciente'));
+        return view('historiamedica.index', ['histmed'=>$histmed, 'paciente'=>$paciente]);
     }
 
     public function create()
@@ -22,55 +23,44 @@ class HistoriaMedicaController extends Controller
 
     public function store(Request $request, HistoriaMedica $histmed)
     {
-        $histmed->id_paciente = $request->ndoc;
-        $histmed->nombre = $request->nom;
-        $histmed->apellido = $request->ap;
-        $histmed->fechanac = $request->fechan;
-        $histmed->genero = $request->genro;
-        $histmed->estcivil = $request->ecivil;
-        $histmed->segsocial = $request->ssocial;
-        $histmed->tel = $request->telefn;
-        $histmed->dir = $request->dire;
-        $histmed->email = $request->emil;
+        $histmed->id_paciente = $request->idpaciente;
+        $histmed->fecha = $request->feca;
+        $histmed->antecedentes = $request->antecen;
+        $histmed->alergias = $request->alerg;
+        $histmed->infquirurgica = $request->infq;
+        $histmed->ocupacion = $request->ocupac;
         $histmed->save();
-        return redirect()->route('historiamedica.show', $histmed);
+        return redirect()->route('historiamedica.show', ['histmed'=>$histmed]);
     }
 
-    public function show($id)
+    public function show($histmed)
     {
-        $paciente = Pacientes::find($id);
-        return view('paciente.show', compact('paciente'));
+        $histmedi = Pacientes::find($histmed);
+        return view('historiamedica.show', ['histmed'=>$histmedi]);
     }
 
-    public function edit($id)
+    public function edit($histmed)
     {
         $paciente = Pacientes::all();
-        $histmed = HistoriaMedica::find($id);
-        return view('paciente.edit', ['histmed'=> $histmed, 'paciente'=> $paciente]);
+        $histmedi = HistoriaMedica::find($histmed);
+        return view('historiamedica.edit', ['histmed'=> $histmedi, 'paciente'=> $paciente]);
     }
 
     public function update(Request $request, HistoriaMedica $histmed)
     {
-        $histmed = Pacientes::find($id);
-        $histmed->idpaciente = $request->idpac;
-        $histmed->id_tipodoc = $request->idtipdoc;
-        $histmed->numdoc = $request->ndoc;
-        $histmed->nombre = $request->nom;
-        $histmed->apellido = $request->ap;
-        $histmed->fechanac = $request->fechan;
-        $histmed->genero = $request->genro;
-        $histmed->estcivil = $request->ecivil;
-        $histmed->segsocial = $request->ssocial;
-        $histmed->tel = $request->telefn;
-        $histmed->dir = $request->dire;
-        $histmed->email = $request->emil;
+        $histmed->id_paciente = $request->idpaciente;
+        $histmed->fecha = $request->feca;
+        $histmed->antecedentes = $request->antecen;
+        $histmed->alergias = $request->alerg;
+        $histmed->infquirurgica = $request->infq;
+        $histmed->ocupacion = $request->ocupac;
         $histmed->save();
-        return redirect()->route('paciente.show', $paciente);
+        return redirect()->route('historiamedica.show', ['histmed'=>$histmed]);
     }
 
-    public function destroy(Paciente $paciente)
+    public function destroy(HistoriaMedica $histmed)
     {
-        $paciente->delete();
-        return redirect()->route('paciente.index');
+        $histmed->delete();
+        return redirect()->route('historiamedica.index');
     }
 }

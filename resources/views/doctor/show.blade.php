@@ -8,8 +8,8 @@
                 <p><strong>ID. Doctor: </strong>{{ $doctor->iddoctor }}</p>
                 <p><strong>ID. Estado: </strong>{{ $doctor->estado }}</p>
                 <p><strong>ID. Personal: </strong>{{ $doctor->id_personal }}</p>
-                <a class="btn btn-success mr-2" role="button" href="{{ route('doctor.index') }}">Volver a lista Personal </a>
-                <a class="btn btn-warning" role="button" href="{{ route('doctor.edit',$doctor) }}">Editar Personal</a>
+                <a class="btn btn-success mr-2" role="button" href="{{ route('doctor.index') }}">Volver a lista Doctores </a>
+                <a class="btn btn-warning" role="button" href="{{ route('doctor.edit',$doctor) }}">Editar Doctor</a>
                 <div class="form-group">
                     <form action="{{ route('doctor.destroy', $doctor) }}" method="post">
                         @csrf

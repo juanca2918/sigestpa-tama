@@ -1,19 +1,19 @@
 @extends('layouts.app')
-@section('title', 'Crea una Historia Medica Cita')
+@section('title', 'Ingresa Doctor')
 @section('content')
     <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
         <div class="shadow-lg p-5 bg-white rounded w-100">
             <div class="row d-flex flex-column justify-content-center align-items-center">
                 <div class="col-md-8">
                 <h3 class="text-center">Crear Doctor</h3>
-                <form action="{{ route('historiamedicacita.store') }}" method="POST">
+                <form action="{{ route('doctor.store') }}" method="POST">
                     @csrf
                     @method('post')
 
                         <div class="form-group">
 
                             {{--Div ID. Doctor--}}
-                            <div class="input-group m-3">
+                            <div class="input-group m-3" hidden>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">ID. Doctor</span>
                                 </div>
@@ -35,11 +35,17 @@
                             {{--Div ID. Personal--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">ID. Personal</span>
+                                    <label class="input-group-text" for="inputGroupSelect01">ID. Paciente
+                                    </label>
                                 </div>
-                                <input type="text" class="form-control" placeholder="ID. Personal" name="idpersonal" aria-label="ID. Personal" aria-describedby="basic-addon1">
+                                <select name="idpersonal" class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Selecciona un Paciente</option>
+                                    @foreach($personal as $item)
+                                        <option value="{{$item->idpersonal}}">{{$item->idpersonal}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            {{--Fin ID. Personal--}}
+                            {{--Fin Div ID. Personal--}}
 
                         </div>
 

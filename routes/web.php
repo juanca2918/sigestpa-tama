@@ -49,13 +49,13 @@ Route::get('/personal/create', [PersonalController::class, 'create'])
     ->name('personal.create');
 Route::post('/personal', [PersonalController::class, 'store'])
     ->name('personal.store');
-Route::get('/personal/{id}', [PersonalController::class, 'show'])
+Route::get('/personal/{personal}', [PersonalController::class, 'show'])
     ->name('personal.show');
-Route::get('/personal/{id}/edit', [PersonalController::class, 'edit'])
+Route::get('/personal/{personal}/edit', [PersonalController::class, 'edit'])
     ->name('personal.edit');
-Route::put('/personal/{id}', [PersonalController::class, 'update'])
+Route::put('/personal/{personal}', [PersonalController::class, 'update'])
     ->name('personal.update');
-Route::delete('/personal/{id}', [PersonalController::class, 'destroy'])
+Route::delete('/personal/{personal}', [PersonalController::class, 'destroy'])
     ->name('personal.destroy');
 /*FIN Rutas de Personal*/
 
@@ -66,13 +66,13 @@ Route::get('/paciente/create', [PacientesController::class, 'create'])
     ->name('paciente.create');
 Route::post('/paciente', [PacientesController::class, 'store'])
     ->name('paciente.store');
-Route::get('/paciente/{id}', [PacientesController::class, 'show'])
+Route::get('/paciente/{paciente}', [PacientesController::class, 'show'])
     ->name('paciente.show');
-Route::get('/paciente/{id}/edit', [PacientesController::class, 'edit'])
+Route::get('/paciente/{paciente}/edit', [PacientesController::class, 'edit'])
     ->name('paciente.edit');
-Route::put('/paciente/{id}', [PacientesController::class, 'update'])
+Route::put('/paciente/{paciente}', [PacientesController::class, 'update'])
     ->name('paciente.update');
-Route::delete('/paciente/{id}', [PacientesController::class, 'destroy'])
+Route::delete('/paciente/{paciente}', [PacientesController::class, 'destroy'])
     ->name('paciente.destroy');
 /*FIN Rutas de Paciente*/
 
@@ -83,13 +83,13 @@ Route::get('/historiamedica/create', [HistoriaMedicaController::class, 'create']
     ->name('historiamedica.create');
 Route::post('/historiamedica', [HistoriaMedicaController::class, 'store'])
     ->name('historiamedica.store');
-Route::get('/historiamedica/{id}', [HistoriaMedicaController::class, 'show'])
+Route::get('/historiamedica/{histmed}', [HistoriaMedicaController::class, 'show'])
     ->name('historiamedica.show');
-Route::get('/historiamedica/{id}/edit', [HistoriaMedicaController::class, 'edit'])
+Route::get('/historiamedica/{histmed}/edit', [HistoriaMedicaController::class, 'edit'])
     ->name('historiamedica.edit');
-Route::put('/historiamedica/{id}', [HistoriaMedicaController::class, 'update'])
+Route::put('/historiamedica/{histmed}', [HistoriaMedicaController::class, 'update'])
     ->name('historiamedica.update');
-Route::delete('/historiamedica/{id}', [HistoriaMedicaController::class, 'destroy'])
+Route::delete('/historiamedica/{histmed}', [HistoriaMedicaController::class, 'destroy'])
     ->name('historiamedica.destroy');
 /*FIN Rutas de Historia Medica*/
 
@@ -100,13 +100,13 @@ Route::get('/historiamedicacita/create', [HistoriaMedicaCitaController::class, '
     ->name('historiamedicacita.create');
 Route::post('/historiamedicacita', [HistoriaMedicaCitaController::class, 'store'])
     ->name('historiamedicacita.store');
-Route::get('/historiamedicacita/{id}', [HistoriaMedicaCitaController::class, 'show'])
+Route::get('/historiamedicacita/{histmedc}', [HistoriaMedicaCitaController::class, 'show'])
     ->name('historiamedicacita.show');
-Route::get('/historiamedicacita/{id}/edit', [HistoriaMedicaCitaController::class, 'edit'])
+Route::get('/historiamedicacita/{histmedc}/edit', [HistoriaMedicaCitaController::class, 'edit'])
     ->name('historiamedicacita.edit');
-Route::put('/historiamedicacita/{id}', [HistoriaMedicaCitaController::class, 'update'])
+Route::put('/historiamedicacita/{histmedcd}', [HistoriaMedicaCitaController::class, 'update'])
     ->name('historiamedicacita.update');
-Route::delete('/historiamedicacita/{id}', [HistoriaMedicaCitaController::class, 'destroy'])
+Route::delete('/historiamedicacita/{histmedc}', [HistoriaMedicaCitaController::class, 'destroy'])
     ->name('historiamedicacita.destroy');
 /*FIN Rutas de Historia Medica Cita*/
 
@@ -134,13 +134,13 @@ Route::get('/cita/create', [CitaController::class, 'create'])
     ->name('cita.create');
 Route::post('/cita', [CitaController::class, 'store'])
     ->name('cita.store');
-Route::get('/cita/{id}', [CitaController::class, 'show'])
+Route::get('/cita/{cita}', [CitaController::class, 'show'])
     ->name('cita.show');
-Route::get('/cita/{id}/edit', [CitaController::class, 'edit'])
+Route::get('/cita/{cita}/edit', [CitaController::class, 'edit'])
     ->name('cita.edit');
-Route::put('/cita/{id}', [CitaController::class, 'update'])
+Route::put('/cita/{cita}', [CitaController::class, 'update'])
     ->name('cita.update');
-Route::delete('/cita/{id}', [CitaController::class, 'destroy'])
+Route::delete('/cita/{cita}', [CitaController::class, 'destroy'])
     ->name('cita.destroy');
 /*FIN Rutas de Cita*/
 
@@ -151,13 +151,13 @@ Route::get('/auxiliar/create', [AuxiliarController::class, 'create'])
     ->name('auxiliar.create');
 Route::post('/auxiliar', [AuxiliarController::class, 'store'])
     ->name('auxiliar.store');
-Route::get('/auxiliar/{id}', [AuxiliarController::class, 'show'])
+Route::get('/auxiliar/{auxiliar}', [AuxiliarController::class, 'show'])
     ->name('auxiliar.show');
-Route::get('/auxiliar/{id}/edit', [AuxiliarController::class, 'edit'])
+Route::get('/auxiliar/{auxiliar}/edit', [AuxiliarController::class, 'edit'])
     ->name('auxiliar.edit');
-Route::put('/auxiliar/{id}', [AuxiliarController::class, 'update'])
+Route::put('/auxiliar/{auxiliar}', [AuxiliarController::class, 'update'])
     ->name('auxiliar.update');
-Route::delete('/auxiliar/{id}', [AuxiliarController::class, 'destroy'])
+Route::delete('/auxiliar/{auxiliar}', [AuxiliarController::class, 'destroy'])
     ->name('auxiliar.destroy');
 /*FIN Rutas de Auxiliar*/
 
