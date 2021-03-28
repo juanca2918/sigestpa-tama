@@ -14,7 +14,18 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->id();
+            $table->id('idpaciente');
+            $table->foreignId('id_tipodoc')->references('idtipodoc')->on('tipo_documentos');
+            $table->string('numdoc')->unique();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->date('fechanac');
+            $table->string('genero');
+            $table->string('estcivil');
+            $table->string('segsocial');
+            $table->string('tel');
+            $table->string('dir');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

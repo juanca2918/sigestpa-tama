@@ -14,7 +14,9 @@ class CreateHistoriaMedicaCitasTable extends Migration
     public function up()
     {
         Schema::create('historia_medica_citas', function (Blueprint $table) {
-            $table->id();
+            $table->id('idcita');
+            $table->datetime('fecha')->unique();
+            $table->text('descripcion');
             $table->timestamps();
         });
     }

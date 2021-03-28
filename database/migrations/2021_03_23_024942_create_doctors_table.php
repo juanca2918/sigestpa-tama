@@ -14,7 +14,9 @@ class CreateDoctorsTable extends Migration
     public function up()
     {
         Schema::create('doctors', function (Blueprint $table) {
-            $table->id();
+            $table->id('iddoctor');
+            $table->boolean('estado');
+            $table->foreignId('id_personal')->references('idpersonal')->on('personals');
             $table->timestamps();
         });
     }

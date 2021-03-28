@@ -33,7 +33,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <a class="navbar-brand " href="{{ url('/tipodocumento') }}">
+                            Tipo Documento
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/personal') }}">
+                            Personal
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/paciente') }}">
+                            Paciente
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/historiamedica') }}">
+                            Historia Medica
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/historiamedicacita') }}">
+                            Historia Medica Cita
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/doctor') }}">
+                            Doctor
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/cita') }}">
+                            Cita
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/auxiliar') }}">
+                            Auxiliar
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -45,7 +68,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

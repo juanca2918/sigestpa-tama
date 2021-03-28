@@ -14,7 +14,9 @@ class CreateAuxiliarsTable extends Migration
     public function up()
     {
         Schema::create('auxiliars', function (Blueprint $table) {
-            $table->id();
+            $table->id('idauxiliar');
+            $table->boolean('estado');
+            $table->foreignId('id_personal')->references('idpersonal')->on('personals');
             $table->timestamps();
         });
     }
