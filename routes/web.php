@@ -104,7 +104,7 @@ Route::get('/historiamedicacita/{histmedc}', [HistoriaMedicaCitaController::clas
     ->name('historiamedicacita.show');
 Route::get('/historiamedicacita/{histmedc}/edit', [HistoriaMedicaCitaController::class, 'edit'])
     ->name('historiamedicacita.edit');
-Route::put('/historiamedicacita/{histmedcd}', [HistoriaMedicaCitaController::class, 'update'])
+Route::put('/historiamedicacita/{histmedc}', [HistoriaMedicaCitaController::class, 'update'])
     ->name('historiamedicacita.update');
 Route::delete('/historiamedicacita/{histmedc}', [HistoriaMedicaCitaController::class, 'destroy'])
     ->name('historiamedicacita.destroy');

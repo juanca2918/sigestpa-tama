@@ -17,6 +17,8 @@ class Cita extends Model
 
     public function historiamedicacita()
     {
-        return $this->hasMany(HistoriaMedicaCita::class, 'id_cita', 'idcita');
+        return $this->hasMany(HistoriaMedicaCita::class,
+            'id_cita',
+            'idcita');
     }
 }

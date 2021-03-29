@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', 'Crea una Cita')
+@section('title', 'Crear una Cita')
 @section('content')
     <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
         <div class="shadow-lg p-5 bg-white rounded w-100">
             <div class="row d-flex flex-column justify-content-center align-items-center">
                 <div class="col-md-8">
-                <h3 class="text-center">Crea Historia Medica Cita</h3>
+                <h3 class="text-center">Crear Cita</h3>
                 <form action="{{ route('cita.store') }}" method="POST">
                     @csrf
                     @method('post')
@@ -90,10 +90,10 @@
 
                     <div class="form-group row">
                         <div class="form-group col-6">
-                            <input type="submit" class="btn btn-success form-control" value="Crear Personal">
+                            <input type="submit" class="btn btn-success form-control" value="Crear Cita">
                         </div>
                         <div class="form-group col-6">
-                            <a class="btn btn-warning form-control" href="{{route('historiamedicacita.index')}}">Regresa a Personal</a>
+                            <a class="btn btn-warning form-control" href="{{route('historiamedicacita.index')}}">Regresar a Lista Citas</a>
                         </div>
                     </div>
                 </form>

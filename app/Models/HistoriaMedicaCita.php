@@ -13,5 +13,5 @@ class HistoriaMedicaCita extends Model
 
     protected $guarded = [];
 
-    protected $primaryKey = 'idhistmedcita';
+    protected $primaryKey = 'idcita';
 }

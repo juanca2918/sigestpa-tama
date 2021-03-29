@@ -35,7 +35,7 @@ class HistoriaMedicaController extends Controller
 
     public function show($histmed)
     {
-        $histmedi = Pacientes::find($histmed);
+        $histmedi = HistoriaMedica::find($histmed);
         return view('historiamedica.show', ['histmed'=>$histmedi]);
     }
 
@@ -43,7 +43,9 @@ class HistoriaMedicaController extends Controller
     {
         $paciente = Pacientes::all();
         $histmedi = HistoriaMedica::find($histmed);
-        return view('historiamedica.edit', ['histmed'=> $histmedi, 'paciente'=> $paciente]);
+        return view('historiamedica.edit',
+            ['histmed'=> $histmedi,
+                'paciente'=> $paciente]);
     }
 
     public function update(Request $request, HistoriaMedica $histmed)

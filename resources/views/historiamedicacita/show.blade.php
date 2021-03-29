@@ -5,13 +5,13 @@
         <div class="row">
             <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
                 <h3>Detalle Historia Medica Cita</h3>
-                <p><strong>ID. Personal: </strong>{{ $hismedc->idcita }}</p>
-                <p><strong>Fecha: </strong>{{ $hismedc->fecha }}</p>
-                <p><strong>Descripcion: </strong>{{ $hismedc->formula }}</p>
-                <p><strong>ID. Historia Medica: </strong>{{ $hismedc->id_histmed }}</p>
-                <p><strong>ID. Cita: </strong>{{ $hismedc->id_cita }}</p>
+                <p><strong>ID. Personal: </strong>{{ $histmedc->idcita }}</p>
+                <p><strong>Fecha: </strong>{{ $histmedc->fecha }}</p>
+                <p><strong>Descripcion: </strong>{{ $histmedc->descripcion }}</p>
+                <p><strong>ID. Historia Medica: </strong>{{ $histmedc->id_histmed }}</p>
+                <p><strong>ID. Cita: </strong>{{ $histmedc->id_cita }}</p>
                 <a class="btn btn-success mr-2" role="button" href="{{ route('historiamedicacita.index') }}">Volver a lista Historia Medica Cita</a>
-                <a class="btn btn-warning" role="button" href="{{ route('historiamedicacita.edit',$hismedc) }}">Editar Historia Medica Cita</a>
+                <a class="btn btn-warning" role="button" href="{{ route('historiamedicacita.edit',$histmedc) }}">Editar Historia Medica Cita</a>
                 <div class="form-group">
                     <form action="{{ route('historiamedicacita.destroy', $histmedc) }}" method="post">
                         @csrf

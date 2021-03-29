@@ -35,7 +35,7 @@
                             {{--Div Descripcion--}}
                             <div class="input-group m-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Formula</span>
+                                    <span class="input-group-text" id="basic-addon1">Descripcion</span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Descripcion" name="descrip" aria-describedby="basic-addon1">
                             </div>
@@ -47,10 +47,10 @@
                                     <label class="input-group-text" for="inputGroupSelect01">ID. Historia Medica
                                     </label>
                                 </div>
-                                <select name="idhistmed" class="custom-select" id="inputGroupSelect01">
+                                <select name="histme" class="custom-select" id="inputGroupSelect01">
                                     <option selected>Selecciona Historia Medica</option>
                                     @foreach($histmed as $item)
-                                        <option value="{{$item->idhistmed}}">{{$item->id_paciente}}</option>
+                                        <option value="{{$item->idhistmed}}">{{$item->idhistmed}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -65,7 +65,7 @@
                                 <select name="idcita" class="custom-select" id="inputGroupSelect01">
                                     <option selected>Selecciona Cita</option>
                                     @foreach($cita as $item)
-                                        <option value="{{$item->idcita}}">{{$item->fecha}}</option>
+                                        <option value="{{$item->idcita}}">{{$item->idcita}}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -26,33 +26,37 @@ class HistoriaMedicaCitaController extends Controller
     {
         $histmedc -> fecha = $request -> fech;
         $histmedc -> descripcion = $request -> descrip;
-        $histmedc -> id_histmed = $request -> idhistmed;
+        $histmedc -> id_histmed = $request -> histme;
         $histmedc -> id_cita = $request -> idcita;
         $histmedc -> save();
         return redirect()->route('historiamedicacita.show', ['histmedc'=>$histmedc]);
+        /*$histmedc = action([HistoriaMedicaCita::class, 'show']);*/
     }
 
     public function show($histmedc)
     {
-        $histmedci= historiaMedicaCita::find($histmedc);
+        $histmedci= HistoriaMedicaCita::find($histmedc);
         return view('historiamedicacita.show', ['histmedc'=>$histmedci]);
     }
 
     public function edit($histmedc)
     {
+        $histmed = HistoriaMedica::all();
+        $cita = Cita::all();
         $histmedci = HistoriaMedicaCita::find($histmedc);
-        return view('historiamedicacita', ['histmedc'=> $histmedci]);
+        return view('historiamedicacita.edit', ['histmedc'=> $histmedci,
+             'histmed'=>$histmed, 'cita'=>$cita]);
     }
 
     public function update(Request $request, HistoriaMedicaCita $histmedc)
     {
-        $histmedci = HistoriaMedicaCita::find($histmedc);
-        $histmedci -> fecha = $request -> fech;
-        $histmedci -> descripcion = $request -> descrip;
-        $histmedci -> id_histmed = $request -> idhistmed;
-        $histmedci -> id_cita = $request -> idcita;
-        $histmedci -> save();
-        return redirect()->route('historiamedicacita.show', ['histmedc'=>$histmedci]);
+        $histmedc -> fecha = $request -> fech;
+        $histmedc -> descripcion = $request -> descrip;
+        $histmedc -> id_histmed = $request -> idhistmedic;
+        $histmedc -> id_cita = $request -> idcita;
+        $histmedc -> save();
+        return redirect()->route('historiamedicacita.show',
+            ['histmedc'=>$histmedc]);
     }
 
     public function destroy(HistoriaMedicaCita $histmedc)
